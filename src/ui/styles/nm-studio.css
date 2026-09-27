@@ -1,0 +1,358 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   N&M STUDIO — TACTICAL SCI-FI INTELLIGENCE HUD STYLES
+   Project: N&Mstudio_ GOD's EYE VIEW
+   Operator Line: 0985 578 385 (Zalo)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --nm-neon-cyan: #00f6ff;
+  --nm-neon-glow: rgba(0, 246, 255, 0.45);
+  --nm-accent-amber: #ffb703;
+  --nm-hud-dark: rgba(7, 13, 22, 0.88);
+  --nm-hud-border: rgba(0, 246, 255, 0.28);
+  --nm-font-display: 'Orbitron', 'JetBrains Mono', monospace;
+}
+
+/* ── Title Bar Layout & Brand Block ────────────────────────────────── */
+.nm-title-bar {
+  pointer-events: auto !important;
+}
+
+.title-flex-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.title-brand-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-studio-kicker {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: var(--nm-neon-cyan);
+  text-shadow: 0 0 10px var(--nm-neon-glow);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  opacity: 0.95;
+}
+
+.brand-main-title {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(0, 246, 255, 0.4);
+}
+
+/* ── N&M Studio Logo & Reticle ─────────────────────────────────────── */
+.nm-brand-logo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(10, 20, 32, 0.7);
+  border: 1px solid var(--nm-hud-border);
+  box-shadow: 0 0 15px rgba(0, 246, 255, 0.2), inset 0 0 10px rgba(0, 246, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nm-brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 246, 255, 0.6));
+  border-radius: 6px;
+}
+
+.nm-brand-logo .logo-reticle {
+  position: absolute;
+  inset: -1px;
+  border: 1px dashed rgba(0, 246, 255, 0.5);
+  border-radius: 10px;
+  pointer-events: none;
+  animation: nm-reticle-spin 12s linear infinite;
+}
+
+@keyframes nm-reticle-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Subtitle with real-time status indicator */
+.nm-title-bar .subtitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  color: rgba(220, 240, 255, 0.65);
+  margin-top: 6px;
+}
+
+.sub-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--nm-neon-cyan);
+  box-shadow: 0 0 8px var(--nm-neon-cyan);
+  animation: nm-pulse-dot 2s infinite;
+}
+
+@keyframes nm-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+/* ── Tactical Operator Uplink Badge (Phone & Zalo) ─────────────────── */
+.tactical-operator-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px 7px 10px;
+  background: linear-gradient(135deg, rgba(8, 16, 28, 0.92) 0%, rgba(13, 27, 46, 0.88) 100%);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  border-radius: 6px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 246, 255, 0.2);
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tactical-operator-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 246, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.tactical-operator-badge:hover {
+  border-color: var(--nm-neon-cyan);
+  box-shadow: 0 4px 25px rgba(0, 246, 255, 0.45), 0 0 15px var(--nm-neon-cyan);
+  transform: translateY(-1px);
+}
+
+.tactical-operator-badge:hover::before {
+  left: 100%;
+}
+
+.tac-badge-status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+  animation: nm-comm-pulse 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes nm-comm-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+  70% { box-shadow: 0 0 0 7px rgba(0, 255, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+.tac-badge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tac-badge-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tac-badge-code {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--nm-neon-cyan);
+  text-transform: uppercase;
+}
+
+.tac-badge-status {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.12);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.tac-badge-phone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tac-phone-icon {
+  font-size: 11px;
+  color: var(--nm-neon-cyan);
+}
+
+.tac-phone-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.tac-phone-tag {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  background: #0068ff;
+  color: #ffffff;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+/* ── HUD Loading Screen Enhancements ───────────────────────────────── */
+.nm-loading-screen .loader-content {
+  max-width: 480px;
+  padding: 30px;
+  background: radial-gradient(circle at center, rgba(12, 24, 40, 0.95) 0%, rgba(6, 12, 20, 0.98) 100%);
+  border: 1px solid var(--nm-hud-border);
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 246, 255, 0.25), inset 0 0 20px rgba(0, 246, 255, 0.1);
+  position: relative;
+}
+
+.nm-loading-screen .loader-content::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--nm-neon-cyan), transparent 60%, var(--nm-accent-amber));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.nm-loader-emblem {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nm-loader-emblem .nm-brand-logo {
+  width: 74px;
+  height: 74px;
+  z-index: 2;
+}
+
+.nm-radar-rings {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 246, 255, 0.35);
+  box-shadow: 0 0 15px rgba(0, 246, 255, 0.2);
+  animation: nm-radar-pulse 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes nm-radar-pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.nm-loader-kicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--nm-neon-cyan);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.loader-operator-contact {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(0, 246, 255, 0.25);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(200, 230, 255, 0.8);
+}
+
+.loader-operator-contact strong {
+  color: var(--nm-neon-cyan);
+  font-weight: 700;
+}
+
+/* ── First Run Dialog Operator Link ────────────────────────────────── */
+.first-run-operator-link {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--nm-neon-cyan);
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 246, 255, 0.3);
+  border-radius: 4px;
+  background: rgba(0, 246, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.first-run-operator-link:hover {
+  background: rgba(0, 246, 255, 0.2);
+  border-color: var(--nm-neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
+}
+
+/* ── Responsive adjustments ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .title-flex-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .brand-main-title {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  .tactical-operator-badge {
+    padding: 5px 10px;
+  }
+}

@@ -1,21 +1,13 @@
 {
-  "name": "gods-eye-view",
+  "name": "nmstudio-gods-eye-view",
   "private": true,
   "version": "0.1.1",
-  "description": "A real-time intelligence console for planet Earth — photorealistic 3D globe, live aircraft/ships/satellites/earthquakes/CCTV, and hands-free voice control. Runs in a browser.",
+  "description": "N&Mstudio_ GOD's EYE VIEW — A real-time intelligence console for planet Earth",
   "type": "module",
   "license": "MIT",
-  "author": "Bilawal Sidhu",
-  "homepage": "https://github.com/bilawalsidhu/gods-eye-view#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bilawalsidhu/gods-eye-view.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bilawalsidhu/gods-eye-view/issues"
-  },
+  "author": "N&M Studio",
   "engines": {
-    "node": ">=24.14.0 <25 || >=26 <27"
+    "node": ">=20.0.0"
   },
   "keywords": [
     "cesium",
