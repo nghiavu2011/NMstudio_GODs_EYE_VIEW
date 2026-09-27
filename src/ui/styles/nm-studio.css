@@ -342,6 +342,433 @@
   box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
 }
 
+/* ── Actions Cluster (Lang Slider + Guide Button) ───────────────────── */
+.nm-hud-actions-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+/* ── Bilingual Slice Toggle (EN / VN) ───────────────────────────────── */
+.nm-lang-slider-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.nm-lang-toggle-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 76px;
+  height: 32px;
+  background: rgba(10, 20, 32, 0.9);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  border-radius: 20px;
+  padding: 2px 4px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 246, 255, 0.2), inset 0 0 8px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.nm-lang-toggle-btn:hover {
+  border-color: var(--nm-neon-cyan);
+  box-shadow: 0 0 18px rgba(0, 246, 255, 0.45);
+}
+
+.nm-lang-chip {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(200, 230, 255, 0.5);
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.nm-lang-chip.active {
+  color: #070d16;
+  text-shadow: none;
+}
+
+.nm-lang-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 34px;
+  height: 24px;
+  background: linear-gradient(135deg, #00f6ff 0%, #00b4d8 100%);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 246, 255, 0.8);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+}
+
+.nm-lang-toggle-btn[data-lang='vi'] .nm-lang-thumb {
+  transform: translateX(34px);
+}
+
+/* ── Tactical Guide Button (?) ──────────────────────────────────────── */
+.nm-guide-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  background: linear-gradient(135deg, rgba(8, 20, 36, 0.9) 0%, rgba(13, 27, 46, 0.85) 100%);
+  border: 1px solid rgba(0, 246, 255, 0.45);
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 246, 255, 0.2);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.nm-guide-btn:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 18px rgba(0, 255, 136, 0.45);
+  transform: translateY(-1px);
+}
+
+.guide-icon-q {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0, 246, 255, 0.2);
+  border: 1px solid var(--nm-neon-cyan);
+  color: var(--nm-neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 0 8px var(--nm-neon-cyan);
+}
+
+.nm-guide-btn:hover .guide-icon-q {
+  background: rgba(0, 255, 136, 0.25);
+  border-color: #00ff88;
+  color: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.guide-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* ── Tactical Guide / Handbook Modal ────────────────────────────────── */
+.nm-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.nm-modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nm-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nm-modal-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 820px;
+  max-height: 88vh;
+  background: linear-gradient(180deg, rgba(10, 20, 34, 0.97) 0%, rgba(6, 12, 20, 0.98) 100%);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 246, 255, 0.3), inset 0 0 30px rgba(0, 246, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: nm-modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nm-modal-in {
+  from { transform: scale(0.95) translateY(12px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.nm-modal-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--nm-neon-cyan), transparent);
+  box-shadow: 0 0 10px var(--nm-neon-cyan);
+  animation: nm-scan-run 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes nm-scan-run {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(600px); opacity: 0; }
+}
+
+.nm-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 26px 16px;
+  border-bottom: 1px solid rgba(0, 246, 255, 0.2);
+  background: rgba(0, 246, 255, 0.03);
+}
+
+.nm-modal-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--nm-neon-cyan);
+  text-transform: uppercase;
+}
+
+.nm-modal-header h2 {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin: 4px 0 2px;
+  text-shadow: 0 0 15px rgba(0, 246, 255, 0.3);
+}
+
+.nm-modal-subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(180, 210, 240, 0.65);
+  margin: 0;
+}
+
+.nm-modal-close-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nm-modal-close-btn:hover {
+  background: rgba(255, 60, 60, 0.2);
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.nm-modal-body {
+  padding: 22px 26px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nm-guide-card {
+  position: relative;
+  background: rgba(12, 24, 40, 0.75);
+  border: 1px solid rgba(0, 246, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px 18px;
+  backdrop-filter: blur(8px);
+}
+
+.nm-guide-card.highlight-card {
+  background: rgba(15, 30, 52, 0.85);
+  border-color: rgba(0, 246, 255, 0.45);
+  box-shadow: 0 0 20px rgba(0, 246, 255, 0.12);
+}
+
+.nm-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nm-card-icon {
+  font-size: 16px;
+}
+
+.nm-card-head h3 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--nm-neon-cyan);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nm-card-content {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.65;
+  color: rgba(220, 235, 250, 0.85);
+}
+
+.nm-card-content p {
+  margin: 0 0 8px;
+}
+
+.nm-card-content p:last-child {
+  margin-bottom: 0;
+}
+
+.nm-guide-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nm-guide-list li strong {
+  color: #00ff88;
+}
+
+.nm-guide-list li em {
+  color: #ffb703;
+  font-style: normal;
+}
+
+.nm-hotkey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.nm-hotkey-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nm-hotkey-item kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(0, 246, 255, 0.15);
+  border: 1px solid var(--nm-neon-cyan);
+  color: var(--nm-neon-cyan);
+  padding: 2px 7px;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 246, 255, 0.3);
+}
+
+.operator-card {
+  border-color: rgba(0, 255, 136, 0.4);
+  background: rgba(8, 28, 22, 0.65);
+}
+
+.operator-card .nm-card-head h3 {
+  color: #00ff88;
+}
+
+.nm-guide-contact-row {
+  margin-top: 12px;
+}
+
+.nm-guide-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #0068ff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(0, 104, 255, 0.5);
+  transition: all 0.2s ease;
+}
+
+.nm-guide-contact-btn:hover {
+  background: #0052cc;
+  box-shadow: 0 0 20px rgba(0, 104, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+.nm-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 26px;
+  border-top: 1px solid rgba(0, 246, 255, 0.2);
+  background: rgba(0, 246, 255, 0.03);
+}
+
+.nm-footer-note {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(200, 220, 240, 0.5);
+}
+
+.nm-btn-primary {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #00f6ff 0%, #00b4d8 100%);
+  color: #060c14;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 246, 255, 0.5);
+  transition: all 0.2s ease;
+}
+
+.nm-btn-primary:hover {
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.8);
+  transform: translateY(-1px);
+}
+
 /* ── Responsive adjustments ────────────────────────────────────────── */
 @media (max-width: 768px) {
   .title-flex-row {
@@ -354,5 +781,14 @@
   }
   .tactical-operator-badge {
     padding: 5px 10px;
+  }
+  .nm-hud-actions-cluster {
+    flex-wrap: wrap;
+  }
+  .nm-modal-container {
+    max-height: 94vh;
+  }
+  .nm-hotkey-grid {
+    grid-template-columns: 1fr;
   }
 }
