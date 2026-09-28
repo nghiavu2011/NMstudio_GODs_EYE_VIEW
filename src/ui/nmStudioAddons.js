@@ -46,7 +46,7 @@ export const TRANSLATIONS = {
     coffee_tab_techcom: "TECHCOMBANK (VIETQR)",
     coffee_tab_momo: "VÍ MOMO / NAPAS",
     coffee_scan_hint: "Mở ứng dụng Ngân hàng hoặc MoMo để quét mã QR chuyển khoản nhanh",
-    coffee_acc_name: "Chủ TK: NGUYEN MANH / N&M STUDIO",
+    coffee_acc_name: "Chủ TK: VŨ TRỌNG NGHĨA",
     coffee_hotline_note: "Hotline / Zalo kết nối & giao lưu: 0985 578 385",
     close_btn: "ĐÓNG LẠI"
   },
@@ -89,7 +89,7 @@ export const TRANSLATIONS = {
     coffee_tab_techcom: "TECHCOMBANK (VIETQR)",
     coffee_tab_momo: "MOMO / NAPAS WALLET",
     coffee_scan_hint: "Scan with your Banking App or MoMo for instant transfer",
-    coffee_acc_name: "Account Holder: NGUYEN MANH / N&M STUDIO",
+    coffee_acc_name: "Account Holder: VU TRONG NGHIA",
     coffee_hotline_note: "Hotline / Zalo: +84 985 578 385",
     close_btn: "DISMISS"
   }
@@ -237,15 +237,15 @@ function injectModals() {
                 </div>
                 <div class="pay-detail-row">
                   <span class="pay-label">CHỦ TÀI KHOẢN:</span>
-                  <span class="pay-val">NGUYEN MANH / N&M STUDIO</span>
+                  <span class="pay-val">VŨ TRỌNG NGHĨA</span>
                 </div>
-                <p class="pay-hint" data-i18n="coffee_scan_hint">Mở ứng dụng Ngân hàng hoặc MoMo để quét mã QR chuyển khoản nhanh</p>
+                <p class="pay-hint" data-i18n="coffee_scan_hint">Mở ứng dụng Ngân hàng để quét mã VietQR chuyển khoản nhanh</p>
               </div>
             </div>
 
             <div id="pay-momo" class="nm-pay-panel" hidden>
               <div class="nm-qr-frame">
-                <img src="/donate-momo.jpg" alt="MoMo QR N&M Studio" class="nm-qr-img" />
+                <img src="/donate-momo.jpg" alt="MoMo QR N&amp;M Studio" class="nm-qr-img" />
                 <span class="qr-crosshair top-left"></span>
                 <span class="qr-crosshair top-right"></span>
                 <span class="qr-crosshair bottom-left"></span>
@@ -254,13 +254,17 @@ function injectModals() {
               <div class="nm-pay-details">
                 <div class="pay-detail-row">
                   <span class="pay-label">HỆ THỐNG:</span>
-                  <span class="pay-val">VÍ ĐIỆN TỬ MOMO / NAPAS 247</span>
+                  <span class="pay-val">VÍ MOMO / NAPAS 247</span>
                 </div>
                 <div class="pay-detail-row">
-                  <span class="pay-label">TÀI KHOẢN:</span>
-                  <span class="pay-val">TN / 0985 578 385</span>
+                  <span class="pay-label">CHỦ TÀI KHOẢN:</span>
+                  <span class="pay-val">VŨ TRỌNG NGHĨA</span>
                 </div>
-                <p class="pay-hint" data-i18n="coffee_scan_hint">Mở ứng dụng Ngân hàng hoặc MoMo để quét mã QR chuyển khoản nhanh</p>
+                <div class="pay-detail-row">
+                  <span class="pay-label">SỐ ĐIỆN THOẠI:</span>
+                  <span class="pay-val">0985 578 385</span>
+                </div>
+                <p class="pay-hint" data-i18n="coffee_scan_hint">Mở ứng dụng MoMo hoặc Ngân hàng để quét mã QR chuyển khoản nhanh</p>
               </div>
             </div>
           </div>
