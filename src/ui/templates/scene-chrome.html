@@ -18,47 +18,53 @@
             <span class="logo-reticle"></span>
           </span>
           <span class="brand-text-wrap">
-            <span class="brand-studio-kicker">N&amp;M STUDIO // TACTICAL COMMAND</span>
+            <span class="brand-studio-kicker" data-i18n="studio_kicker">N&amp;M STUDIO // TACTICAL COMMAND</span>
             <span class="brand-main-title">GOD'S EYE <span class="title-accent">VIEW</span></span>
           </span>
         </h1>
         <p class="subtitle">
           <span class="sub-status-dot"></span>
-          <span class="sub-text">GLOBAL REALTIME OSINT &middot; NO PLACE LEFT BEHIND</span>
+          <span class="sub-text" data-i18n="subtitle">GLOBAL REALTIME OSINT &middot; NO PLACE LEFT BEHIND</span>
         </p>
       </div>
 
-      <!-- Tactical Operator Uplink (Phone / Zalo) -->
-      <a href="https://zalo.me/0985578385" target="_blank" rel="noopener noreferrer" class="tactical-operator-badge" title="Connect Commander via Zalo / Phone: 0985 578 385">
-        <span class="tac-badge-status-pulse"></span>
-        <div class="tac-badge-content">
-          <div class="tac-badge-top">
-            <span class="tac-badge-code">SECURE COMM LINK</span>
-            <span class="tac-badge-status">ONLINE</span>
+      <!-- Tactical Actions Cluster -->
+      <div class="title-tactical-actions">
+        <!-- Tactical Operator Uplink (Phone / Zalo) -->
+        <a href="https://zalo.me/0985578385" target="_blank" rel="noopener noreferrer" class="tactical-operator-badge" title="Connect Commander via Zalo / Phone: 0985 578 385">
+          <span class="tac-badge-status-pulse"></span>
+          <div class="tac-badge-content">
+            <div class="tac-badge-top">
+              <span class="tac-badge-code" data-i18n="secure_comm_link">SECURE COMM LINK</span>
+              <span class="tac-badge-status">ONLINE</span>
+            </div>
+            <div class="tac-badge-phone">
+              <span class="tac-phone-icon">&#9742;</span>
+              <span class="tac-phone-num">0985 578 385</span>
+              <span class="tac-phone-tag">ZALO</span>
+            </div>
           </div>
-          <div class="tac-badge-phone">
-            <span class="tac-phone-icon">&#9742;</span>
-            <span class="tac-phone-num">0985 578 385</span>
-            <span class="tac-phone-tag">ZALO</span>
+        </a>
+
+        <!-- Buy Me A Coffee Tab Button -->
+        <button type="button" id="nm-coffee-btn" class="nm-coffee-tab-btn" title="Mời N&amp;M Tách Cà Phê · Đồng hành cùng dự án">
+          <span class="coffee-cup-icon">☕</span>
+          <div class="coffee-text-group">
+            <span class="coffee-kicker" data-i18n="coffee_btn_sub">ĐỒNG HÀNH CÙNG N&amp;M</span>
+            <span class="coffee-main-text" data-i18n="coffee_btn">BUY ME A COFFEE</span>
           </div>
-        </div>
-      </a>
+        </button>
 
-      <!-- Tactical UI Actions: Language Slider [EN/VN] & Help [?] -->
-      <div class="nm-hud-actions-cluster">
-        <!-- Language Slide Switcher (Bilingual EN/VN) -->
-        <div class="nm-lang-slider-wrap" title="Switch Language EN/VN · Chuyển đổi ngôn ngữ">
-          <button type="button" id="nm-lang-toggle" class="nm-lang-toggle-btn" data-lang="vi" aria-label="Toggle Language EN/VN">
-            <span class="nm-lang-chip nm-lang-en">EN</span>
-            <span class="nm-lang-thumb"></span>
-            <span class="nm-lang-chip nm-lang-vn active">VN</span>
-          </button>
+        <!-- Bilingual Slice Toggle EN/VN -->
+        <div class="nm-slice-toggle" id="nm-lang-toggle" title="Switch Language / Đổi ngôn ngữ">
+          <button type="button" class="nm-slice-btn active" data-lang="vi">VN</button>
+          <button type="button" class="nm-slice-btn" data-lang="en">EN</button>
         </div>
 
-        <!-- Tactical Guide & FAQ Button (?) -->
-        <button type="button" id="nm-help-btn" class="nm-guide-btn" title="Tactical Guide & Features FAQ · Hướng dẫn sử dụng & Hỏi đáp tính năng" aria-label="Help Guide">
-          <span class="guide-icon-q">?</span>
-          <span class="guide-text" data-i18n="guide_btn">HƯỚNG DẪN</span>
+        <!-- Help Guide (?) Button -->
+        <button type="button" id="nm-help-btn" class="nm-help-hud-btn" data-i18n-title="help_tooltip" title="Hướng dẫn tác chiến &amp; Giải thích tính năng">
+          <span class="help-question-mark">?</span>
+          <span class="help-btn-label" data-i18n="help_btn">HƯỚNG DẪN</span>
         </button>
       </div>
     </div>
@@ -109,108 +115,3 @@
   <div id="safe-frame-overlay">
     <div id="safe-frame-box"></div>
   </div>
-
-  <!-- Tactical Guide / User Manual Modal (?) -->
-  <aside id="nm-guide-modal" class="nm-modal-overlay" role="dialog" aria-labelledby="nm-guide-title" aria-modal="true" hidden>
-    <div class="nm-modal-backdrop" data-close-guide></div>
-    <div class="nm-modal-container">
-      <div class="nm-modal-scanline"></div>
-      
-      <!-- Modal Header -->
-      <header class="nm-modal-header">
-        <div class="nm-modal-header-left">
-          <span class="nm-modal-badge">[ LEVEL-5 CLASSIFIED // MANUAL ]</span>
-          <h2 id="nm-guide-title" data-i18n="guide_title">CẨM NANG HƯỚNG DẪN TÁC CHIẾN</h2>
-          <p class="nm-modal-subtitle" data-i18n="guide_subtitle">Cấu trúc hệ thống, Điều khiển tính năng &amp; Vận hành thời gian thực</p>
-        </div>
-        <button type="button" class="nm-modal-close-btn" data-close-guide aria-label="Close Guide">&times;</button>
-      </header>
-
-      <!-- Modal Content Body -->
-      <div class="nm-modal-body" data-rail-scroller>
-        <!-- Section 1: Why features are OFF -->
-        <section class="nm-guide-card highlight-card">
-          <div class="nm-card-glow"></div>
-          <div class="nm-card-head">
-            <span class="nm-card-icon">⚡</span>
-            <h3 data-i18n="sec1_title">TẠI SAO NHIỀU TÍNH NĂNG MẶC ĐỊNH ĐỂ "OFF"?</h3>
-          </div>
-          <div class="nm-card-content" data-i18n="sec1_desc">
-            <p><strong>Bảo vệ Băng thông &amp; Hiệu năng GPU:</strong> N&amp;Mstudio_ GOD's EYE VIEW kết nối trực tiếp đến hàng chục nguồn tình báo không gian toàn cầu (hơn 10.000 máy bay ADS-B đang bay, tàu biển AIS, hàng vạn mảnh vệ tinh quỹ đạo, trạm đo địa chấn, vệ tinh nhiệt NASA...).</p>
-            <p>Nếu tự động nạp tất cả các lớp cùng lúc khi mở web, trình duyệt sẽ bị giật lag đồ họa 3D và ngốn hàng GB dữ liệu mạng. Vì vậy hệ thống chia thành các <strong>Module Nhiệm vụ</strong> tắt sẵn để bạn chủ động kích hoạt theo nhu cầu!</p>
-          </div>
-        </section>
-
-        <!-- Section 2: How to turn on & use layers -->
-        <section class="nm-guide-card">
-          <div class="nm-card-head">
-            <span class="nm-card-icon">🎯</span>
-            <h3 data-i18n="sec2_title">CÁCH BẬT &amp; ĐIỀU KHIỂN CÁC LỚP TÌNH BÁO</h3>
-          </div>
-          <div class="nm-card-content" data-i18n="sec2_desc">
-            <ul class="nm-guide-list">
-              <li><strong>Bảng DATA LAYERS (Góc trái):</strong> Bấm vào dấu <code>+</code> ở panel bên trái để mở danh sách và bật tắt nhanh các lớp: <em>Flights (Máy bay), Marine (Tàu biển), Satellites (Vệ tinh), Earthquakes (Động đất), Fires (Cháy rừng), Radio (Đài phát thanh toàn cầu)</em>.</li>
-              <li><strong>Chế độ Buồng lái (Cockpit Mode):</strong> Nhấp chuột vào bất kỳ máy bay nào đang bay trên bầu trời, thanh thông tin máy bay sẽ hiện ra &rarr; Bấm <strong>COCKPIT</strong> (hoặc nhấn phím <strong>C</strong>) để ngồi thẳng vào buồng lái máy bay lướt trên địa hình thực tế!</li>
-              <li><strong>Chế độ Trinh sát Đa quang phổ:</strong> Nhấn các phím số từ <strong>1 đến 7</strong> trên bàn phím để đổi chế độ nhìn: <em>Bình thường, Màn hình CRT, Kính nhìn đêm NVG, Camera ảnh nhiệt FLIR, Anime, Noir, Tuyết trắng</em>.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Section 3: Hotkeys Reference -->
-        <section class="nm-guide-card">
-          <div class="nm-card-head">
-            <span class="nm-card-icon">⌨️</span>
-            <h3 data-i18n="sec3_title">BẢNG PHÍM TẮT TÁC CHIẾN (TACTICAL HOTKEYS)</h3>
-          </div>
-          <div class="nm-card-content">
-            <div class="nm-hotkey-grid">
-              <div class="nm-hotkey-item"><kbd>1</kbd>–<kbd>7</kbd> <span data-i18n="key_styles">Đổi bộ lọc quang phổ (Normal / CRT / NVG / FLIR...)</span></div>
-              <div class="nm-hotkey-item"><kbd>H</kbd> <span data-i18n="key_hud">Bật / Tắt Tactical HUD tình báo</span></div>
-              <div class="nm-hotkey-item"><kbd>D</kbd> <span data-i18n="key_detect">Bật / Tắt Lưới nhận diện mục tiêu (Detection Mesh)</span></div>
-              <div class="nm-hotkey-item"><kbd>C</kbd> <span data-i18n="key_cockpit">Nhập buồng lái máy bay đang khóa mục tiêu</span></div>
-              <div class="nm-hotkey-item"><kbd>`</kbd> <span data-i18n="key_fps">Hiện tốc độ khung hình (FPS) &amp; thông số WebGL</span></div>
-              <div class="nm-hotkey-item"><kbd>Esc</kbd> <span data-i18n="key_esc">Bỏ chọn mục tiêu / Trở về toàn cảnh Trái Đất</span></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 4: Power up & API keys -->
-        <section class="nm-guide-card">
-          <div class="nm-card-head">
-            <span class="nm-card-icon">🔑</span>
-            <h3 data-i18n="sec4_title">MỞ KHÓA TÍNH NĂNG 3D &amp; TRỢ LÝ GIỌNG NÓI (POWER UP)</h3>
-          </div>
-          <div class="nm-card-content" data-i18n="sec4_desc">
-            <p>17 trên 19 lớp dữ liệu của ứng dụng là <strong>HOÀN TOÀN MIỄN PHÍ &amp; KHÔNG CẦN KEY</strong>. Nếu muốn mở thêm tính năng cao cấp:</p>
-            <ul class="nm-guide-list">
-              <li>Nhấp nút <strong>POWER UP</strong> ở góc dưới cùng bên phải màn hình để dán trực tiếp Key (không cần chạm vào code).</li>
-              <li><strong>Cesium ion Token:</strong> Miễn phí tạo tại cesium.com để bật địa hình 3D núi đồi và công trình toàn thế giới.</li>
-              <li><strong>OpenAI Key:</strong> Mở tính năng trò chuyện bằng giọng nói <strong>GEV MIC</strong> để ra lệnh cho Trái Đất bằng tiếng Anh.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Section 5: Operator Assistance -->
-        <section class="nm-guide-card operator-card">
-          <div class="nm-card-head">
-            <span class="nm-card-icon">📞</span>
-            <h3 data-i18n="sec5_title">HỖ TRỢ TRỰC TIẾP TỪ N&amp;M STUDIO</h3>
-          </div>
-          <div class="nm-card-content">
-            <p data-i18n="sec5_desc">Mọi thắc mắc kỹ thuật, yêu cầu tích hợp dữ liệu GIS/BĐS hoặc tùy biến giao diện quân sự theo yêu cầu riêng:</p>
-            <div class="nm-guide-contact-row">
-              <a href="https://zalo.me/0985578385" target="_blank" rel="noopener noreferrer" class="nm-guide-contact-btn">
-                <span>💬 ZALO / HOTLINE: <strong>0985 578 385</strong></span>
-              </a>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Modal Footer -->
-      <footer class="nm-modal-footer">
-        <span class="nm-footer-note" data-i18n="guide_footer">N&amp;Mstudio_ GOD's EYE VIEW · Bảng điều khiển Tình báo Không gian</span>
-        <button type="button" class="nm-btn-primary" data-close-guide data-i18n="guide_close">ĐÃ HIỂU / ĐÓNG</button>
-      </footer>
-    </div>
-  </aside>
