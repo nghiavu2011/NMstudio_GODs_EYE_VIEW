@@ -2,8 +2,8 @@
  * N&M STUDIO — Tactical HUD Addons
  * - Bilingual Support (Slice Toggle EN / VN)
  * - Operator Intel Manual & Feature Guide (?)
- * - Buy Me A Coffee (Techcombank & MoMo QR, Heartfelt Empathy Sharing)
- * - Hotline / Zalo: 0985 578 385
+ * - Value-Led Community Empathy & Buy Me A Coffee (Techcombank & MoMo)
+ * - Creator: Vũ Trọng Nghĩa · Hotline / Zalo: 0985 578 385
  */
 
 export const TRANSLATIONS = {
@@ -37,12 +37,18 @@ export const TRANSLATIONS = {
     help_power_up_title: "4. MỞ KHÓA ĐỊA HÌNH 3D NÂNG CAO (POWER UP)",
     help_power_up_desc: "Nhấn nút 'POWER UP' ở góc dưới cùng bên phải để nhập Cesium ion Token miễn phí hoặc Google Maps Key để mở địa hình 3D Photorealistic sắc nét đến từng tòa nhà!",
 
-    // Coffee modal
-    coffee_modal_title: "MỜI N&M STUDIO TÁCH CÀ PHÊ",
-    coffee_modal_subtitle: "ĐỒNG HÀNH & TIẾP NĂNG LƯỢNG CHO NHỮNG DỰ ÁN VIỄN TƯỞNG VÌ CỘNG ĐỒNG",
-    coffee_heart_quote: "Mỗi dòng code, mỗi vệ tinh lướt trên quả cầu 3D này được nuôi dưỡng bằng niềm say mê thuần khiết và ước mơ mang những công nghệ vũ trụ - tình báo không gian tân tiến nhất đến gần với mọi người Việt Nam.",
-    coffee_message_p1: "Dự án N&Mstudio_ GOD's EYE VIEW hoàn toàn phi lợi nhuận và mở cho mọi người trải nghiệm. Việc duy trì máy chủ truyền phát dữ liệu thời gian thực và nghiên cứu các mô hình 3D đòi hỏi sự bền bỉ không ngừng.",
-    coffee_message_p2: "Nếu bạn yêu thích công trình này, cảm thấy hữu ích hoặc chỉ đơn giản là muốn tiếp thêm chút năng lượng ấm lòng — một ly cà phê hay một lời động viên từ bạn chính là món quà ý nghĩa nhất!",
+    // Value & Empathy Coffee modal
+    coffee_modal_title: "ĐỒNG HÀNH CÙNG N&M STUDIO",
+    coffee_modal_subtitle: "KHÁM PHÁ GIÁ TRỊ DỰ ÁN & TIẾP NĂNG LƯỢNG CHO SỰ SÁNG TẠO",
+    val_title_space: "HỌC THUẬT & KHÔNG GIAN",
+    val_desc_space: "Trực quan hóa quỹ đạo trạm ISS, vệ tinh thời tiết và cơ học thiên thể 3D sống động.",
+    val_title_osint: "TÌNH BÁO MỞ (OSINT)",
+    val_desc_osint: "Theo dõi hàng chục ngàn chuyến bay ADS-B realtime, lướt buồng lái máy bay qua địa hình số.",
+    val_title_vn: "DỰ ÁN KỸ SƯ VIỆT",
+    val_desc_vn: "Dự án công nghệ phi lợi nhuận do anh Vũ Trọng Nghĩa cùng cộng sự tâm huyết xây dựng cho cộng đồng.",
+    exp_first_lead: "Trải nghiệm trước - Tự nguyện đồng hành sau:",
+    exp_first_desc: "Bạn hãy cứ thỏa sức bay lượn, quan sát Trái Đất và trải nghiệm mọi tính năng hoàn toàn miễn phí. Khi bạn cảm nhận được giá trị và sự tận tụy trong từng dòng code... thì một tách cà phê sẽ là ngọn lửa tiếp thêm sức mạnh cho đội ngũ duy trì máy chủ!",
+    cta_enter_web: "🚀 TÔI ĐÃ HIỂU, ĐỂ TÔI VÀO TRẢI NGHIỆM WEB NGAY!",
     coffee_tab_techcom: "TECHCOMBANK (VIETQR)",
     coffee_tab_momo: "VÍ MOMO / NAPAS",
     coffee_scan_hint: "Mở ứng dụng Ngân hàng hoặc MoMo để quét mã QR chuyển khoản nhanh",
@@ -80,12 +86,18 @@ export const TRANSLATIONS = {
     help_power_up_title: "4. UNLOCK PHOTOREALISTIC 3D (POWER UP)",
     help_power_up_desc: "Click 'POWER UP' in the bottom-right corner to enter a free Cesium ion token or Google Maps key for photorealistic 3D buildings and global terrain!",
 
-    // Coffee modal
-    coffee_modal_title: "BUY N&M STUDIO A COFFEE",
-    coffee_modal_subtitle: "EMPOWERING COMMUNITY SPATIAL INTELLIGENCE & SCI-FI INNOVATION",
-    coffee_heart_quote: "Every line of code and every satellite gliding over this 3D globe is fueled by genuine passion and the dream to make space-grade intelligence technology accessible to everyone.",
-    coffee_message_p1: "N&Mstudio_ GOD's EYE VIEW is completely non-profit and open for public exploration. Maintaining realtime telemetry servers and spatial 3D models requires constant dedication.",
-    coffee_message_p2: "If you find value in this console or simply enjoy viewing our planet from orbit, a warm cup of coffee or kind encouragement is the greatest motivation for us to keep pushing forward.",
+    // Value & Empathy Coffee modal
+    coffee_modal_title: "SUPPORT N&M STUDIO",
+    coffee_modal_subtitle: "DISCOVER PROJECT VALUES & FUEL OUR COMMUNITY SCI-FI INNOVATION",
+    val_title_space: "ACADEMIC & SPACE",
+    val_desc_space: "Visualize real-time ISS orbits, weather satellites, and 3D celestial mechanics.",
+    val_title_osint: "OPEN INTEL (OSINT)",
+    val_desc_osint: "Track tens of thousands of live ADS-B flights and glide through terrain in Cockpit mode.",
+    val_title_vn: "VIETNAMESE ENGINEER PROJECT",
+    val_desc_vn: "A non-profit spatial intelligence initiative dedicated to public education and curiosity.",
+    exp_first_lead: "Experience First - Support If Touched:",
+    exp_first_desc: "Feel free to explore our globe and try every feature without any restriction. If you find value in this creation, a warm cup of coffee helps keep our real-time servers alive and fuels new developments!",
+    cta_enter_web: "🚀 UNDERSTOOD, TAKE ME TO THE CONSOLE!",
     coffee_tab_techcom: "TECHCOMBANK (VIETQR)",
     coffee_tab_momo: "MOMO / NAPAS WALLET",
     coffee_scan_hint: "Scan with your Banking App or MoMo for instant transfer",
@@ -137,6 +149,22 @@ function updateSliceButtons() {
       btn.classList.remove('active');
     }
   });
+}
+
+export function openModal(modalId) {
+  const modal = typeof modalId === 'string' ? document.getElementById(modalId) : modalId;
+  if (!modal) return;
+  modal.removeAttribute('hidden');
+  modal.classList.add('active');
+  modal.style.display = 'flex';
+}
+
+export function closeModal(modalId) {
+  const modal = typeof modalId === 'string' ? document.getElementById(modalId) : modalId;
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('hidden', '');
+  modal.style.display = 'none';
 }
 
 function injectModals() {
@@ -194,26 +222,49 @@ function injectModals() {
       </div>
     </div>
 
-    <!-- ═════════ BUY ME A COFFEE MODAL ═════════ -->
+    <!-- ═════════ VALUE-FIRST COFFEE & COMMUNITY MODAL ═════════ -->
     <div id="nm-coffee-modal" class="nm-modal-backdrop" hidden>
       <div class="nm-modal-dialog coffee-dialog">
         <div class="nm-modal-glow coffee-glow"></div>
         <div class="nm-modal-header">
-          <div class="nm-modal-tag" data-i18n="coffee_modal_subtitle">ĐỒNG HÀNH & TIẾP NĂNG LƯỢNG CHO NHỮNG DỰ ÁN VIỄN TƯỞNG VÌ CỘNG ĐỒNG</div>
-          <h2 class="nm-modal-title coffee-title">☕ <span data-i18n="coffee_modal_title">MỜI N&M STUDIO TÁCH CÀ PHÊ</span></h2>
+          <div class="nm-modal-tag" data-i18n="coffee_modal_subtitle">KHÁM PHÁ GIÁ TRỊ DỰ ÁN & TIẾP NĂNG LƯỢNG CHO SỰ SÁNG TẠO</div>
+          <h2 class="nm-modal-title coffee-title">☕ <span data-i18n="coffee_modal_title">ĐỒNG HÀNH CÙNG N&M STUDIO</span></h2>
           <button type="button" class="nm-modal-close-btn" data-close-target="nm-coffee-modal" aria-label="Close">&times;</button>
         </div>
         
         <div class="nm-modal-body">
-          <blockquote class="nm-heart-quote">
-            <span class="quote-symbol">“</span>
-            <span data-i18n="coffee_heart_quote">Mỗi dòng code, mỗi vệ tinh lướt trên quả cầu 3D này được nuôi dưỡng bằng niềm say mê thuần khiết và ước mơ mang những công nghệ vũ trụ - tình báo không gian tân tiến nhất đến gần với mọi người Việt Nam.</span>
-          </blockquote>
-
-          <div class="nm-coffee-intro">
-            <p data-i18n="coffee_message_p1">Dự án N&Mstudio_ GOD's EYE VIEW hoàn toàn phi lợi nhuận và mở cho mọi người trải nghiệm. Việc duy trì máy chủ truyền phát dữ liệu thời gian thực và nghiên cứu các mô hình 3D đòi hỏi sự bền bỉ không ngừng.</p>
-            <p data-i18n="coffee_message_p2">Nếu bạn yêu thích công trình này, cảm thấy hữu ích hoặc chỉ đơn giản là muốn tiếp thêm chút năng lượng ấm lòng — một ly cà phê hay một lời động viên từ bạn chính là món quà ý nghĩa nhất!</p>
+          <!-- 3 Value & Academic Pillars -->
+          <div class="nm-value-grid">
+            <div class="nm-value-card">
+              <span class="nm-value-icon">🛰️</span>
+              <span class="nm-value-title" data-i18n="val_title_space">HỌC THUẬT & KHÔNG GIAN</span>
+              <p class="nm-value-desc" data-i18n="val_desc_space">Trực quan hóa quỹ đạo trạm ISS, vệ tinh thời tiết và cơ học thiên thể 3D sống động.</p>
+            </div>
+            <div class="nm-value-card">
+              <span class="nm-value-icon">✈️</span>
+              <span class="nm-value-title" data-i18n="val_title_osint">TÌNH BÁO MỞ (OSINT)</span>
+              <p class="nm-value-desc" data-i18n="val_desc_osint">Theo dõi hàng chục ngàn chuyến bay ADS-B realtime, lướt buồng lái máy bay qua địa hình số.</p>
+            </div>
+            <div class="nm-value-card">
+              <span class="nm-value-icon">🇻🇳</span>
+              <span class="nm-value-title" data-i18n="val_title_vn">DỰ ÁN KỸ SƯ VIỆT</span>
+              <p class="nm-value-desc" data-i18n="val_desc_vn">Dự án công nghệ phi lợi nhuận do anh Vũ Trọng Nghĩa cùng cộng sự tâm huyết xây dựng cho cộng đồng.</p>
+            </div>
           </div>
+
+          <!-- Experience First Message -->
+          <div class="nm-exp-first-box">
+            <span class="nm-exp-icon">💡</span>
+            <div>
+              <strong data-i18n="exp_first_lead">Trải nghiệm trước - Tự nguyện đồng hành sau:</strong>
+              <div data-i18n="exp_first_desc">Bạn hãy cứ thỏa sức bay lượn, quan sát Trái Đất và trải nghiệm mọi tính năng hoàn toàn miễn phí. Khi bạn cảm nhận được giá trị và sự tận tụy trong từng dòng code... thì một tách cà phê sẽ là ngọn lửa tiếp thêm sức mạnh cho đội ngũ duy trì máy chủ!</div>
+            </div>
+          </div>
+
+          <!-- Prominent Enter Web CTA -->
+          <button type="button" class="nm-cta-enter-btn" data-close-target="nm-coffee-modal">
+            <span data-i18n="cta_enter_web">🚀 TÔI ĐÃ HIỂU, ĐỂ TÔI VÀO TRẢI NGHIỆM WEB NGAY!</span>
+          </button>
 
           <!-- Payment QR Switching Tabs -->
           <div class="nm-pay-tabs">
@@ -222,6 +273,7 @@ function injectModals() {
           </div>
 
           <div class="nm-pay-card-container">
+            <!-- Techcombank Panel -->
             <div id="pay-techcom" class="nm-pay-panel active">
               <div class="nm-qr-frame">
                 <img src="/donate-techcom.jpg" alt="Techcombank VietQR N&M Studio" class="nm-qr-img" />
@@ -243,6 +295,7 @@ function injectModals() {
               </div>
             </div>
 
+            <!-- MoMo Panel -->
             <div id="pay-momo" class="nm-pay-panel" hidden>
               <div class="nm-qr-frame">
                 <img src="/donate-momo.jpg" alt="MoMo QR N&amp;M Studio" class="nm-qr-img" />
@@ -282,20 +335,21 @@ function injectModals() {
 
   document.body.appendChild(container);
 
-  // Setup close buttons
+  // Setup close buttons (support both X button, close button, and CTA button)
   container.querySelectorAll('[data-close-target]').forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const targetId = btn.getAttribute('data-close-target');
-      const target = document.getElementById(targetId);
-      if (target) target.hidden = true;
+      closeModal(targetId);
     });
   });
 
-  // Setup click outside to close
+  // Setup click outside backdrop to close
   container.querySelectorAll('.nm-modal-backdrop').forEach((backdrop) => {
     backdrop.addEventListener('click', (e) => {
       if (e.target === backdrop) {
-        backdrop.hidden = true;
+        closeModal(backdrop);
       }
     });
   });
@@ -305,18 +359,21 @@ function injectModals() {
   const payPanels = container.querySelectorAll('.nm-pay-panel');
 
   payTabBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const targetId = btn.getAttribute('data-pay-target');
       payTabBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
 
       payPanels.forEach((panel) => {
         if (panel.id === targetId) {
-          panel.hidden = false;
+          panel.removeAttribute('hidden');
           panel.classList.add('active');
+          panel.style.display = 'flex';
         } else {
-          panel.hidden = true;
           panel.classList.remove('active');
+          panel.setAttribute('hidden', '');
+          panel.style.display = 'none';
         }
       });
     });
@@ -325,22 +382,20 @@ function injectModals() {
   // Close modals on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      const openModal = container.querySelector('.nm-modal-backdrop:not([hidden])');
-      if (openModal) {
-        openModal.hidden = true;
+      const openModalEl = container.querySelector('.nm-modal-backdrop.active') || container.querySelector('.nm-modal-backdrop:not([hidden])');
+      if (openModalEl) {
+        closeModal(openModalEl);
       }
     }
   });
 }
 
 export function openHelpModal() {
-  const modal = document.getElementById('nm-help-modal');
-  if (modal) modal.hidden = false;
+  openModal('nm-help-modal');
 }
 
 export function openCoffeeModal() {
-  const modal = document.getElementById('nm-coffee-modal');
-  if (modal) modal.hidden = false;
+  openModal('nm-coffee-modal');
 }
 
 export function initNmStudioAddons() {
@@ -349,7 +404,6 @@ export function initNmStudioAddons() {
   if (savedLang === 'en' || savedLang === 'vi') {
     currentLang = savedLang;
   } else {
-    // Default to Vietnamese if browser is vi, else vi by default as requested
     currentLang = 'vi';
   }
 
