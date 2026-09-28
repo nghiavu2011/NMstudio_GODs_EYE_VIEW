@@ -4,6 +4,32 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/celestrak/:group*",
+      "destination": "https://celestrak.org/NORAD/elements/gp.php?GROUP=:group*&FORMAT=tle"
+    },
+    {
+      "source": "/api/adsblol/:path*",
+      "destination": "https://api.adsb.lol/v2/:path*"
+    },
+    {
+      "source": "/api/adsbdb/:path*",
+      "destination": "https://api.adsbdb.com/v0/:path*"
+    },
+    {
+      "source": "/api/radio/:path*",
+      "destination": "https://de1.api.radio-browser.info/json/:path*"
+    },
+    {
+      "source": "/api/launches",
+      "destination": "https://ll.thespacedevs.com/2.3.0/launches/?limit=100&mode=detailed"
+    },
+    {
+      "source": "/api/overpass/:match*",
+      "destination": "https://overpass-api.de/api/:match*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

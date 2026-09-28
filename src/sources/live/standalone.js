@@ -62,34 +62,82 @@ export function createOpenSkySource({
         params.set('lat', query.latitude.toFixed(4));
         params.set('lon', query.longitude.toFixed(4));
       }
-      const { response, payload } = await readResponse(
+      try {
+        const { response, payload } = await readResponse(
+          fetchImpl,
+          `/api/opensky${params.size ? '?' + params : ''}`,
+          { signal },
+          'OpenSky',
+        );
+        if (response.ok) {
+          return {
+            ...openSkySnapshot(payload, {
+              source: header(response, 'x-flight-source') || 'OpenSky Network',
+              coverage:
+                header(response, 'x-flight-coverage') ||
+                'worldwide upstream snapshot',
+              now: now(),
+            }),
+            status: response.status,
+          };
+        }
+      } catch (err) {
+        // OpenSky unavailable on static hosting - proceed to adsb.lol live fallback
+      }
+
+      const fallbackPath = (Number.isFinite(query.latitude) && Number.isFinite(query.longitude))
+        ? `/api/adsblol/lat/${Math.round(query.latitude * 4) / 4}/lon/${Math.round(query.longitude * 4) / 4}/dist/250`
+        : '/api/adsblol/mil';
+      const { response: fbRes, payload: fbPayload } = await readResponse(
         fetchImpl,
-        `/api/opensky${params.size ? '?' + params : ''}`,
+        fallbackPath,
         { signal },
-        'OpenSky',
+        'adsb.lol',
       );
-      if (!response.ok) throw openSkyError(response);
+      if (!fbRes.ok) throw httpError(fbRes, 'adsb.lol');
+      const age = finite(header(fbRes, 'x-ads-b-cache-age-ms'));
       return {
-        ...openSkySnapshot(payload, {
-          source: header(response, 'x-flight-source') || 'OpenSky Network',
-          coverage:
-            header(response, 'x-flight-coverage') ||
-            'worldwide upstream snapshot',
+        ...readsbSnapshot(fbPayload, {
+          observedAtMs: now() - (age != null && age > 0 ? age : 0),
           now: now(),
+          stale: header(fbRes, 'x-ads-b-cache') === 'STALE',
         }),
-        status: response.status,
+        status: fbRes.status,
       };
     },
     async getTrack(reference, { signal } = {}) {
+      try {
+        const { response, payload } = await readResponse(
+          fetchImpl,
+          '/api/opensky-track?icao24=' + encodeURIComponent(reference),
+          { signal },
+          'OpenSky',
+        );
+        if (response.ok) {
+          return {
+            records: normalizeAircraftTrack(payload?.path),
+            complete: false,
+          };
+        }
+      } catch (err) {
+        // Fallback to adsb.lol trace
+      }
       const { response, payload } = await readResponse(
         fetchImpl,
-        '/api/opensky-track?icao24=' + encodeURIComponent(reference),
+        '/api/adsblol/trace?hex=' + encodeURIComponent(reference),
         { signal },
-        'OpenSky',
+        'adsb.lol',
       );
-      if (!response.ok) throw httpError(response, 'OpenSky');
+      if (!response.ok) throw httpError(response, 'adsb.lol');
+      const baseTimeMs = epoch(payload?.timestamp, 1000);
       return {
-        records: normalizeAircraftTrack(payload?.path),
+        records:
+          baseTimeMs == null
+            ? []
+            : normalizeAircraftTrack(payload?.trace, {
+                baseTimeMs,
+                readsb: true,
+              }),
         complete: false,
       };
     },
