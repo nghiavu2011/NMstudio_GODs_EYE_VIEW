@@ -54,7 +54,37 @@ export const TRANSLATIONS = {
     coffee_scan_hint: "Mở ứng dụng Ngân hàng hoặc MoMo để quét mã QR chuyển khoản nhanh",
     coffee_acc_name: "Chủ TK: VŨ TRỌNG NGHĨA",
     coffee_hotline_note: "Hotline / Zalo kết nối & giao lưu: 0985 578 385",
-    close_btn: "ĐÓNG LẠI"
+    close_btn: "ĐÓNG LẠI",
+
+    // Global HUD and Actions
+    active_style: "KIỂU HIỂN THỊ",
+    clear_layers: "Tắt tất cả các lớp dữ liệu đã chọn",
+    share_link: "Sao chép liên kết chia sẻ góc nhìn",
+    tilt_map: "Nghiêng góc nhìn 3D / Chế độ thẳng đứng",
+    north_up: "Đặt lại la bàn hướng Bắc",
+    reset_globe: "Quay về toàn cảnh Trái Đất",
+    loading_live_data: "ĐANG TẢI DỮ LIỆU TÌNH BÁO",
+
+    // Command Dock
+    visual_presets: "CHẾ ĐỘ HIỂN THỊ",
+    map_source: "NGUỒN BẢN ĐỒ",
+    style_mini_label: "Kiểu",
+    location_toolbar_label: "VỊ TRÍ / TỌA ĐỘ",
+    search_placeholder: "Tìm kiếm bất kỳ địa điểm, thành phố, tọa độ...",
+
+    // Styles
+    style_normal: "Tiêu chuẩn",
+    style_crt: "Màn CRT",
+    style_nvg: "Nhìn đêm (NVG)",
+    style_flir: "Cảm biến nhiệt (FLIR)",
+    style_anime: "Hoạt họa (Anime)",
+    style_noir: "Điện ảnh (Noir)",
+    style_snow: "Bão tuyết (Snow)",
+
+    // Layer Panels
+    data_layers: "LỚP DỮ LIỆU TRỰC TIẾP",
+    cctv_panel_title: "CAMERA QUAN SÁT (CCTV)",
+    scenes_panel_title: "KỊCH BẢN TÁC CHIẾN"
   },
   en: {
     studio_kicker: "N&M STUDIO // TACTICAL COMMAND",
@@ -103,11 +133,92 @@ export const TRANSLATIONS = {
     coffee_scan_hint: "Scan with your Banking App or MoMo for instant transfer",
     coffee_acc_name: "Account Holder: VU TRONG NGHIA",
     coffee_hotline_note: "Hotline / Zalo: +84 985 578 385",
-    close_btn: "DISMISS"
+    close_btn: "DISMISS",
+
+    // Global HUD and Actions
+    active_style: "ACTIVE STYLE",
+    clear_layers: "Turn off all selected data layers",
+    share_link: "Copy share link",
+    tilt_map: "Toggle straight-down and tilted map views",
+    north_up: "Reset map bearing to north",
+    reset_globe: "Reset camera and return to full globe view",
+    loading_live_data: "LOADING LIVE DATA",
+
+    // Command Dock
+    visual_presets: "VISUAL PRESETS",
+    map_source: "MAP SOURCE",
+    style_mini_label: "Style",
+    location_toolbar_label: "LOCATION",
+    search_placeholder: "Search any location...",
+
+    // Styles
+    style_normal: "Normal",
+    style_crt: "CRT",
+    style_nvg: "NVG",
+    style_flir: "FLIR",
+    style_anime: "Anime",
+    style_noir: "Noir",
+    style_snow: "Snow",
+
+    // Layer Panels
+    data_layers: "DATA LAYERS",
+    cctv_panel_title: "CCTV",
+    scenes_panel_title: "SCENES"
   }
 };
 
+export const LAYER_NAME_MAPPINGS = {
+  // Categories
+  "Movement": "Chuyển động",
+  "Cameras": "Camera & Quan sát",
+  "Infrastructure": "Cơ sở hạ tầng",
+  "Events": "Sự kiện & Thiên tai",
+  "Weather": "Khí quyển & Thời tiết",
+  "Utilities": "Tiện ích & Dẫn đường",
+
+  // Movement Layers
+  "Satellites": "Vệ tinh nhân tạo",
+  "Flights": "Chuyến bay dân dụng",
+  "Military": "Máy bay quân sự (ADS-B)",
+  "Local ADS-B": "Trạm thu ADS-B mặt đất",
+  "Live Vessels": "Tàu biển thương mại (AIS)",
+  "Traffic": "Lưu lượng giao thông",
+  "Transit": "Giao thông công cộng",
+  "Bike Share": "Trạm xe đạp công cộng",
+
+  // Cameras
+  "Recent Imagery": "Ảnh viễn thám mới",
+
+  // Infrastructure
+  "Mapped ALPR Cameras": "Camera nhận diện biển số ALPR",
+  "Military Bases": "Căn cứ & Đồn trú quân sự",
+  "Military Installations": "Căn cứ & Đồn trú quân sự",
+  "Data Centers": "Trung tâm dữ liệu toàn cầu",
+  "Submarine Cables": "Tuyến cáp quang biển",
+  "Dams & Reservoirs": "Đập thủy điện & Hồ chứa",
+
+  // Events
+  "Rocket Launches": "Bãi phóng tên lửa vũ trụ",
+  "Earthquakes": "Động đất thời gian thực",
+  "Active Fires": "Điểm cháy rừng (NASA FIRMS)",
+  "Fire Perimeters": "Ranh giới vùng cháy",
+
+  // Weather
+  "Wind Streams": "Luồng gió toàn cầu",
+  "Wind": "Luồng gió toàn cầu",
+  "Weather Radar": "Radar phản xạ thời tiết",
+  "Satellite Clouds": "Mây vệ tinh hồng ngoại",
+  "Lightning Strikes": "Mật độ sét đánh",
+  "Tropical Cyclones": "Vết bão nhiệt đới",
+
+  // Utilities
+  "Directions": "Chỉ đường & Lộ trình",
+  "World Radio": "Đài phát thanh thế giới",
+  "Radio": "Đài phát thanh thế giới"
+};
+
 let currentLang = 'vi';
+let layerObserverInitialized = false;
 
 export function getLanguage() {
   return currentLang;
@@ -119,6 +230,47 @@ export function setLanguage(lang) {
   localStorage.setItem('nm_studio_lang', lang);
   applyTranslations();
   updateSliceButtons();
+}
+
+export function translateDynamicLayers() {
+  const container = document.getElementById('data-toggles');
+  if (!container) return;
+
+  const elements = container.querySelectorAll('.data-toggle-group-header, .chip-label, .row-label, .data-toggle-item, button, span');
+  elements.forEach((el) => {
+    // Check if element has direct text to translate
+    const trimmed = el.textContent.trim();
+    if (!trimmed) return;
+
+    if (currentLang === 'vi') {
+      if (LAYER_NAME_MAPPINGS[trimmed]) {
+        if (!el.hasAttribute('data-orig-text')) {
+          el.setAttribute('data-orig-text', trimmed);
+        }
+        el.textContent = LAYER_NAME_MAPPINGS[trimmed];
+      }
+    } else {
+      const orig = el.getAttribute('data-orig-text');
+      if (orig) {
+        el.textContent = orig;
+      }
+    }
+  });
+}
+
+export function setupLayerObserver() {
+  if (layerObserverInitialized) return;
+  const container = document.getElementById('data-toggles');
+  if (!container) return;
+
+  const observer = new MutationObserver(() => {
+    if (currentLang === 'vi') {
+      translateDynamicLayers();
+    }
+  });
+
+  observer.observe(container, { childList: true, subtree: true });
+  layerObserverInitialized = true;
 }
 
 export function applyTranslations() {
@@ -138,6 +290,16 @@ export function applyTranslations() {
       el.setAttribute('title', dict[key]);
     }
   });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key]) {
+      el.setAttribute('placeholder', dict[key]);
+    }
+  });
+
+  translateDynamicLayers();
+  setupLayerObserver();
 }
 
 function updateSliceButtons() {
@@ -436,4 +598,8 @@ export function initNmStudioAddons() {
 
   applyTranslations();
   updateSliceButtons();
+
+  // Retry after layer catalog finishes bootstrapping
+  setTimeout(applyTranslations, 600);
+  setTimeout(applyTranslations, 1800);
 }

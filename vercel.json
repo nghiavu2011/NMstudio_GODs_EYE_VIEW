@@ -4,16 +4,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/api/celestrak",
-      "destination": "https://celestrak.org/NORAD/elements/gp.php"
-    },
-    {
-      "source": "/api/overpass/:match*",
-      "destination": "https://overpass-api.de/api/:match*"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -38,6 +28,23 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "*"
         }
       ]
     }

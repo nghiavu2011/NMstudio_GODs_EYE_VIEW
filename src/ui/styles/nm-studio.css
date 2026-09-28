@@ -342,12 +342,32 @@
   box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
 }
 
-/* ── Tactical Actions Cluster (Top Bar) ───────────────────────────── */
-.title-tactical-actions {
+/* ── Top-Right Tactical Actions Bar ────────────────────────────────── */
+.nm-top-right-bar {
+  position: absolute;
+  top: 32px;
+  right: 36px;
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.nm-top-right-bar #style-indicator {
+  position: static !important;
+  margin: 0 !important;
+}
+
+.title-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title-brand-block .tactical-operator-badge {
+  margin-top: 6px;
+  align-self: flex-start;
 }
 
 /* ── Buy Me A Coffee Button ────────────────────────────────────────── */
@@ -1012,14 +1032,27 @@
 }
 
 /* ── Responsive adjustments ────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .title-flex-row {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .title-tactical-actions {
-    flex-wrap: wrap;
+@media (max-width: 1024px) {
+  .nm-top-right-bar {
     gap: 8px;
+    right: 16px;
+  }
+  .coffee-kicker {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nm-top-right-bar {
+    top: 12px;
+    right: 12px;
+  }
+  .nm-title-bar {
+    left: 12px;
+    top: 12px;
+  }
+  .help-btn-label {
+    display: none;
   }
   .nm-pay-panel {
     flex-direction: column;

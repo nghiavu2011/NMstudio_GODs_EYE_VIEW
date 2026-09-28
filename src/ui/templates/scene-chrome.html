@@ -7,96 +7,94 @@
     <div id="world-overlay-status" role="status" aria-live="polite" aria-atomic="true"></div>
   </div>
 
-  <!-- Title -->
+  <!-- Title Bar (Top-Left) -->
   <div id="title-bar" class="nm-title-bar">
     <div class="title-glow"></div>
-    <div class="title-flex-row">
-      <div class="title-brand-block">
-        <h1>
-          <span class="title-logo nm-brand-logo" aria-hidden="true">
-            <img src="/nm-logo.png" alt="N&amp;M Studio" />
-            <span class="logo-reticle"></span>
-          </span>
-          <span class="brand-text-wrap">
-            <span class="brand-studio-kicker" data-i18n="studio_kicker">N&amp;M STUDIO // TACTICAL COMMAND</span>
-            <span class="brand-main-title">GOD'S EYE <span class="title-accent">VIEW</span></span>
-          </span>
-        </h1>
-        <p class="subtitle">
-          <span class="sub-status-dot"></span>
-          <span class="sub-text" data-i18n="subtitle">GLOBAL REALTIME OSINT &middot; NO PLACE LEFT BEHIND</span>
-        </p>
-      </div>
+    <div class="title-brand-block">
+      <h1>
+        <span class="title-logo nm-brand-logo" aria-hidden="true">
+          <img src="/nm-logo.png" alt="N&amp;M Studio" />
+          <span class="logo-reticle"></span>
+        </span>
+        <span class="brand-text-wrap">
+          <span class="brand-studio-kicker" data-i18n="studio_kicker">N&amp;M STUDIO // TACTICAL COMMAND</span>
+          <span class="brand-main-title">GOD'S EYE <span class="title-accent">VIEW</span></span>
+        </span>
+      </h1>
+      <p class="subtitle">
+        <span class="sub-status-dot"></span>
+        <span class="sub-text" data-i18n="subtitle">GLOBAL REALTIME OSINT &middot; NO PLACE LEFT BEHIND</span>
+      </p>
 
-      <!-- Tactical Actions Cluster -->
-      <div class="title-tactical-actions">
-        <!-- Tactical Operator Uplink (Phone / Zalo) -->
-        <a href="https://zalo.me/0985578385" target="_blank" rel="noopener noreferrer" class="tactical-operator-badge" title="Connect Commander via Zalo / Phone: 0985 578 385">
-          <span class="tac-badge-status-pulse"></span>
-          <div class="tac-badge-content">
-            <div class="tac-badge-top">
-              <span class="tac-badge-code" data-i18n="secure_comm_link">SECURE COMM LINK</span>
-              <span class="tac-badge-status">ONLINE</span>
-            </div>
-            <div class="tac-badge-phone">
-              <span class="tac-phone-icon">&#9742;</span>
-              <span class="tac-phone-num">0985 578 385</span>
-              <span class="tac-phone-tag">ZALO</span>
-            </div>
+      <!-- Tactical Operator Uplink (Phone / Zalo) -->
+      <a href="https://zalo.me/0985578385" target="_blank" rel="noopener noreferrer" class="tactical-operator-badge" title="Connect Commander via Zalo / Phone: 0985 578 385">
+        <span class="tac-badge-status-pulse"></span>
+        <div class="tac-badge-content">
+          <div class="tac-badge-top">
+            <span class="tac-badge-code" data-i18n="secure_comm_link">SECURE COMM LINK</span>
+            <span class="tac-badge-status">ONLINE</span>
           </div>
-        </a>
-
-        <!-- Buy Me A Coffee Tab Button -->
-        <button type="button" id="nm-coffee-btn" class="nm-coffee-tab-btn" title="Mời N&amp;M Tách Cà Phê · Đồng hành cùng dự án">
-          <span class="coffee-cup-icon">☕</span>
-          <div class="coffee-text-group">
-            <span class="coffee-kicker" data-i18n="coffee_btn_sub">ĐỒNG HÀNH CÙNG N&amp;M</span>
-            <span class="coffee-main-text" data-i18n="coffee_btn">BUY ME A COFFEE</span>
+          <div class="tac-badge-phone">
+            <span class="tac-phone-icon">&#9742;</span>
+            <span class="tac-phone-num">0985 578 385</span>
+            <span class="tac-phone-tag">ZALO</span>
           </div>
-        </button>
-
-        <!-- Bilingual Slice Toggle EN/VN -->
-        <div class="nm-slice-toggle" id="nm-lang-toggle" title="Switch Language / Đổi ngôn ngữ">
-          <button type="button" class="nm-slice-btn active" data-lang="vi">VN</button>
-          <button type="button" class="nm-slice-btn" data-lang="en">EN</button>
         </div>
-
-        <!-- Help Guide (?) Button -->
-        <button type="button" id="nm-help-btn" class="nm-help-hud-btn" data-i18n-title="help_tooltip" title="Hướng dẫn tác chiến &amp; Giải thích tính năng">
-          <span class="help-question-mark">?</span>
-          <span class="help-btn-label" data-i18n="help_btn">HƯỚNG DẪN</span>
-        </button>
-      </div>
+      </a>
     </div>
   </div>
 
-  <!-- Style indicator -->
-  <div id="style-indicator">
-    <span class="indicator-label">ACTIVE STYLE</span>
-    <span class="indicator-value" id="active-style-name">NORMAL</span>
+  <!-- Top-Right Tactical Bar (Coffee, Language, Help, Style) -->
+  <div id="top-right-actions" class="nm-top-right-bar">
+    <!-- Buy Me A Coffee Tab Button -->
+    <button type="button" id="nm-coffee-btn" class="nm-coffee-tab-btn" title="Mời N&amp;M Tách Cà Phê · Đồng hành cùng dự án">
+      <span class="coffee-cup-icon">☕</span>
+      <div class="coffee-text-group">
+        <span class="coffee-kicker" data-i18n="coffee_btn_sub">ĐỒNG HÀNH CÙNG N&amp;M</span>
+        <span class="coffee-main-text" data-i18n="coffee_btn">BUY ME A COFFEE</span>
+      </div>
+    </button>
+
+    <!-- Bilingual Slice Toggle EN/VN -->
+    <div class="nm-slice-toggle" id="nm-lang-toggle" title="Switch Language / Đổi ngôn ngữ">
+      <button type="button" class="nm-slice-btn active" data-lang="vi">VN</button>
+      <button type="button" class="nm-slice-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Help Guide (?) Button -->
+    <button type="button" id="nm-help-btn" class="nm-help-hud-btn" data-i18n-title="help_tooltip" title="Hướng dẫn tác chiến &amp; Giải thích tính năng">
+      <span class="help-question-mark">?</span>
+      <span class="help-btn-label" data-i18n="help_btn">HƯỚNG DẪN</span>
+    </button>
+
+    <!-- Style indicator -->
+    <div id="style-indicator">
+      <span class="indicator-label" data-i18n="active_style">ACTIVE STYLE</span>
+      <span class="indicator-value" id="active-style-name">NORMAL</span>
+    </div>
   </div>
 
   <!-- Top-center camera and share actions -->
   <nav id="top-center-actions" aria-label="Globe actions">
-    <button id="clear-selected-layers" type="button" aria-label="Clear selected data layers" title="Turn off all selected data layers">
+    <button id="clear-selected-layers" type="button" aria-label="Clear selected data layers" data-i18n-title="clear_layers" title="Turn off all selected data layers">
       <span class="material-symbols-outlined" aria-hidden="true">layers_clear</span>
     </button>
-    <button id="share-btn" type="button" aria-label="Copy share link" title="Copy share link">
+    <button id="share-btn" type="button" aria-label="Copy share link" data-i18n-title="share_link" title="Copy share link">
       <span class="share-icon" aria-hidden="true">&#x1F517;</span>
     </button>
-    <button id="tilt-map-view" type="button" aria-label="Tilt map to oblique view" aria-pressed="false" title="Toggle straight-down and tilted map views">
+    <button id="tilt-map-view" type="button" aria-label="Tilt map to oblique view" data-i18n-title="tilt_map" aria-pressed="false" title="Toggle straight-down and tilted map views">
       <span class="material-symbols-outlined" aria-hidden="true">view_in_ar</span>
     </button>
-    <button id="north-up-view" type="button" aria-label="Reset map to north up" title="Reset map bearing to north">
+    <button id="north-up-view" type="button" aria-label="Reset map to north up" data-i18n-title="north_up" title="Reset map bearing to north">
       <span class="camera-compass-n" aria-hidden="true">N</span>
       <span class="camera-compass-needle material-symbols-outlined" aria-hidden="true">navigation</span>
     </button>
-    <button id="reset-globe-view" type="button" aria-label="Reset to full globe view" title="Reset camera and return to full globe view">
+    <button id="reset-globe-view" type="button" aria-label="Reset to full globe view" data-i18n-title="reset_globe" title="Reset camera and return to full globe view">
       <span class="material-symbols-outlined" aria-hidden="true">public</span>
     </button>
   </nav>
   <div id="global-loading-status" role="status" aria-live="polite" aria-atomic="true" hidden>
-    <span id="global-loading-label">LOADING LIVE DATA</span>
+    <span id="global-loading-label" data-i18n="loading_live_data">LOADING LIVE DATA</span>
     <span id="global-loading-detail"></span>
   </div>
   <div id="traffic-sync-chip" aria-live="polite">
